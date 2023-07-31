@@ -1,6 +1,7 @@
 import pandas as pd
 import pyautogui
 import tkinter as tk
+import time
 from pynput import keyboard
 
 # 保存需要自动点击的坐标的列表
