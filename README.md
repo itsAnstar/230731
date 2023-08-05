@@ -1,4 +1,3 @@
-# 本仓库已经整合至[新仓库](https://github.com/LuckyNigel/230731)
 
 ## [auto-1  (excel)](https://github.com/LuckyNigel/230731)
 * 1、读取excel-弹出资源管理器让用户自己选择文件 
@@ -22,4 +21,4 @@
 
 ## [auto-3  (爬虫&文件交互)](https://github.com/LuckyNigel/230731)
 * 下载重命名
-* 整合文件夹
+* 整合文件夹 (待feat)
