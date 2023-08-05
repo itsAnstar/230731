@@ -1,5 +1,5 @@
 
-## [auto-1  (excel)](https://github.com/LuckyNigel/230731)
+## [auto-1  (auto excel)](https://github.com/LuckyNigel/230731)
 * 1、读取excel-弹出资源管理器让用户自己选择文件 
 * 2、按第4列扩展选定区域倒序 
 * 3、删除第1、2、6、8、9、10、11、12、列 
