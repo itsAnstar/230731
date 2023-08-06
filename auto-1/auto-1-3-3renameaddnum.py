@@ -5,7 +5,7 @@ import tkinter as tk
 import os
 
 
-def get_input_file_path():
+def get_input_file_path(): 
     root = tk.Tk()
     root.withdraw()
     file_path = filedialog.askopenfilename(title="选择Excel文件", filetypes=[("Excel文件", "*.xlsx")])
