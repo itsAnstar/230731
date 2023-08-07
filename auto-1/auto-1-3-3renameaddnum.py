@@ -1,14 +1,17 @@
-import pandas as pd
-import tkinter as tk
-from tkinter import filedialog
 import os
+import tkinter as tk
 from datetime import datetime
+from tkinter import filedialog
+
+import pandas as pd
+
 
 def get_input_file_path():
     root = tk.Tk()
     root.withdraw()
     file_path = filedialog.askopenfilename(title="选择Excel文件", filetypes=[("Excel文件", "*.xlsx")])
     return file_path
+
 
 def get_unique_file_name(folder, base_name, extension, counter=0):
     if counter == 0:
@@ -19,6 +22,7 @@ def get_unique_file_name(folder, base_name, extension, counter=0):
     if os.path.exists(file_path):
         return get_unique_file_name(folder, base_name, extension, counter + 1)
     return file_name
+
 
 def process_excel_file(input_file):
     # 1. 读取Excel文件
@@ -54,6 +58,7 @@ def process_excel_file(input_file):
     df.to_excel(output_file_path, index=False)
 
     print(f"处理完成，保存到文件: {output_file_path}")
+
 
 if __name__ == "__main__":
     input_file_path = get_input_file_path()
