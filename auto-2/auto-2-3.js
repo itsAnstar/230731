@@ -1,5 +1,5 @@
 // 输入链接
-const url = 'https://www.douyin.com/video/7267922371716074767';
+const url = 'https://www.douyin.com/video/7267710587256327485';
 
 // 加载页面  
 fetch(url)
