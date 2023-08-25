@@ -1,3 +1,7 @@
+# 本文件为最终完全体
+# auto-1输出的excel文件直接传递给本程序可以直接下载
+
+
 import json
 import requests
 import re
@@ -38,7 +42,8 @@ for i in range(total_rows):
 }
         # 发送请求
         response = requests.get(url=url, headers=headers)
-        title = re.findall('<title data-rh="true">(.*?)</title>', response.text, re.S)[0]
+        # 我的应用场景中不需要获取视频标题，故注释掉
+        # title = re.findall('<title data-rh="true">(.*?)</title>', response.text, re.S)[0]
         video_info = re.findall('<script id="RENDER_DATA" type="application/json">(.*?)</script', response.text)[0]
         video_info = requests.utils.unquote(video_info)
         json_data = json.loads(video_info)
@@ -57,12 +62,14 @@ for i in range(total_rows):
                     if chunk:
                         f.write(chunk)
             print(f"----上述视频成功下载----> {video_path}")
+            print("{tile}")
             print('-----------------------------------------------------------------------------')
         else:
             print("\033[31m未知错误\033[0m")
     except Exception as e:
         print("\033[31m上述视频下载失败-->视频已被删除或隐藏\033[0m")
         print(f"错误详情: {e}")
+        print('-----------------------------------------------------------------------------')
         continue
 
 # 打印运行总结
