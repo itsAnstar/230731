@@ -29,17 +29,17 @@ for url in urls:
     video_info = requests.utils.unquote(video_info)
     json_data = json.loads(video_info)
 
-    print("JSON Data:", json_data)  # Add this line to print the JSON data for debugging
+    print("json 数值:", json_data)  # Add this line to print the JSON data for debugging
 
     try:
         video_url = 'https:' + json_data['xxx']['yyy']['zzz']['playAddr'][0]['src']
-        print("Video URL:", video_url)
+        print("视频链接:", video_url)
 
         # Step 3: Write the video URL to the corresponding row in Excel
         sheet.cell(row=urls.index(url) + 2, column=2, value=video_url)
     except (KeyError, IndexError):
-        print("Failed to extract video URL from JSON data. Skipping this URL.")
+        print("链接解析失败 跳过当前链接")
 
 # Save the updated Excel file
 workbook.save(file_path)
-print("Results written to Excel.")
+print("结果已写入excel中")
