@@ -54,7 +54,7 @@ def download_video(task):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
     }
     response = requests.get(url=url, headers=headers)
-        re.findall('<script id="RENDER_DATA" type="application/json">(.*?)</script', response.text)[0]
+    video_info = re.findall('<script id="RENDER_DATA" type="application/json">(.*?)</script', response.text)[0]
     video_info = requests.utils.unquote(video_info)
     json_data = json.loads(video_info)
     video_url = 'https:' + \
