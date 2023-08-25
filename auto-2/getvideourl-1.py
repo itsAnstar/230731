@@ -13,3 +13,4 @@ json_data = json.loads(video_info)
 video_url = 'https:' + \
             json_data['74931a6b75e09238f154ab1577c994c9']['aweme']['detail']['video']['bitRateList'][0]['playAddr'][0]['src']
 print(video_url)
+
