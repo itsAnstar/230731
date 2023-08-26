@@ -16,7 +16,11 @@ root = Tk()
 root.withdraw()
 
 # 打开文件选择对话框，让用户选择Excel文件
-file_path = filedialog.askopenfilename()
+file_path = filedialog.askopenfilename(title="选择excel文件")
+
+# 打开文件夹选择对话框，让用户选择目标文件夹
+dest_dir = filedialog.askdirectory(title="选择保存目录")
+
 
 # 使用pandas读取Excel文件
 df = pd.read_excel(file_path)
@@ -56,7 +60,7 @@ for i in range(total_rows):
         # 确保响应状态为200
         if video_response.status_code == 200:
             # 创建一个与标题相同的文件，将视频写入文件
-            video_path = os.path.join(os.getcwd(), f"{file_name}.mp4")
+            video_path = os.path.join(dest_dir, f"{file_name}.mp4")
             with open(video_path, 'wb') as f:
                 for chunk in video_response.iter_content(chunk_size=1024):
                     if chunk:
