@@ -13,5 +13,6 @@
 * 解析json-->正则匹配URL直链字段
 * 以requests.get请求直链
 * 下载直链文件
+* 用HeadersDecoding程序来给Batch下载程序的cookie保活
 
 
