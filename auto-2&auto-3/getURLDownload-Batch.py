@@ -34,7 +34,7 @@ date_str = now.strftime("%Y%m%d")
 log_file_name = f"log_{date_str}.txt"
 suffix = 1
 
-# 检查文件是否存在，如果存在，就在文件名后面添加后缀
+# 检查目标目录是否存在同名文件，如果存在，就在文件名后面添加后缀
 while os.path.exists(os.path.join(dest_dir, log_file_name)):
     log_file_name = f"log_{date_str}-{suffix}.txt"
     suffix += 1
@@ -44,7 +44,7 @@ logging.basicConfig(filename=os.path.join(dest_dir, log_file_name), level=loggin
 
 # 记录程序开始的时间
 logging.info(f"程序开始运行: {datetime.datetime.now()}")
-
+# 增加成功计数器
 success_count = 0
 
 # 遍历Excel文件的所有行
@@ -70,6 +70,7 @@ for i in range(total_rows):
         }
         # 发送请求
         response = requests.get(url=url, headers=headers)
+        title = re.findall('<title data-rh="true">(.*?)</title>', response.text, re.S)[0]
         video_info = re.findall('<script id="RENDER_DATA" type="application/json">(.*?)</script', response.text)[0]
         video_info = requests.utils.unquote(video_info)
         json_data = json.loads(video_info)
@@ -91,10 +92,10 @@ for i in range(total_rows):
                         f.write(chunk)
             print(f"----上述视频成功下载----> {video_path}")
             logging.info(f"----上述视频成功下载----> {video_path}")
-            # 增加成功计数器
+            # 成功请求则success参数自加1
             success_count += 1
-            print("{tile}")
-            logging.info("{tile}")
+            print("{title}")
+            logging.info(f"{title}")
             print('-----------------------------------------------------------------------------')
             logging.info('-----------------------------------------------------------------------------')
         else:
