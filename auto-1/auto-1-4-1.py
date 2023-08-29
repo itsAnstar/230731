@@ -34,12 +34,35 @@ num_days = int(input("请输入需要保存的天数："))
 selected_dates = unique_dates[:num_days]
 df = df[df[df.columns[1]].isin(selected_dates)]
 
+
+
+# 让用户输入数字选择需要保存的文件名
+print("请输入需要保存的文件名：")
+print("1: 糖醋排哭")
+print("2: 西湖醋鱼")
+print("3: 粉蒸肉")
+file_name_choice = int(input())
+
+# 根据用户的选择设置文件名
+if file_name_choice == 1:
+    file_name = "糖醋排骨"
+elif file_name_choice == 2:
+    file_name = "西湖醋鱼"
+elif file_name_choice == 3:
+    file_name = "粉蒸肉"
+else:
+    print("输入错误，将使用默认文件名")
+    file_name = "default"
+
+# 获取用户选择的文件的目录
+dir_path = os.path.dirname(file_path)
+
 # 将处理后的Excel数据保存到一个新文件
 today = datetime.now().strftime('%m%d')
-output_filename = f"{today}_output.xlsx"
+output_filename = os.path.join(dir_path, f"{file_name}_{today}_output.xlsx")
 counter = 1
 while os.path.exists(output_filename):
-    output_filename = f"{today}_output-{counter}.xlsx"
+    output_filename = os.path.join(dir_path, f"{file_name}_{today}_output-{counter}.xlsx")
     counter += 1
 
 df.to_excel(output_filename, index=False)
