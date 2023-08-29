@@ -82,21 +82,28 @@ for i in range(total_rows):
         # 获取视频，设置超时时间为600秒（10分钟）
         video_response = requests.get(video_url, stream=True, timeout=600)
 
-        # 确保响应状态为200
+    # 确保响应状态为200
         if video_response.status_code == 200:
-            # 创建一个与标题相同的文件，将视频写入文件
+            # 检查目标目录是否存在同名文件，如果存在，就在文件名后面添加后缀
+            suffix = 1
+            while os.path.exists(os.path.join(dest_dir, f"{file_name}-{suffix}.mp4")):
+                suffix += 1
+            file_name = f"{file_name}-{suffix}" if suffix > 1 else file_name
+
+        #    创建一个与标题相同的文件，将视频写入文件
             video_path = os.path.join(dest_dir, f"{file_name}.mp4")
             with open(video_path, 'wb') as f:
                 for chunk in video_response.iter_content(chunk_size=1024):
                     if chunk:
                         f.write(chunk)
+        # ...
             print(f"----上述视频成功下载----> {video_path}")
             logging.info(f"----上述视频成功下载----> {video_path}")
             # 成功请求则success参数自加1
             success_count += 1
             print("{title}")
             logging.info(f"{title}")
-            print('-----------------------------------------------------------------------------')
+            print("-------------------------------------------------------------------------------------------------------")
             logging.info('-----------------------------------------------------------------------------')
         else:
             print("\033[31m未知错误\033[0m")
@@ -109,7 +116,7 @@ for i in range(total_rows):
         logging.error(f"上述视频下载失败-->视频已被删除或隐藏, 错误详情: {e}")
         print(f"错误详情: {e}")
         logging.error(f"错误详情: {e}")
-        print('-----------------------------------------------------------------------------')
+        print("-------------------------------------------------------------------------------------------------------")
         continue
 # 记录程序结束的时间
 logging.info(f"程序结束运行: {datetime.datetime.now()}")
