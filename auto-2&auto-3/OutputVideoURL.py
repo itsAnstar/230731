@@ -1,7 +1,7 @@
 import json
 import requests
 import re
-url = 'https://www.douyin.com/video/7271968816802860325'
+url = 'https://www.douyin.com/video/7273024102460362047'
 headers = {
      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36'
 }

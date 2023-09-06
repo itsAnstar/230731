@@ -1,7 +1,7 @@
 import requests
 import time
 
-url = "https://www.douyin.com/video/7271968816802860325"  # 将此处替换为您要访问的站点URL
+url = "https://www.douyin.com/video/7273024102460362047"  # 将此处替换为您要访问的站点URL
 
 # 创建一个Session对象
 session = requests.Session()
