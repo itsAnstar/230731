@@ -1,6 +1,9 @@
 # 项目简介
-- 本工具auto-1用来处理某音电商罗盘导出的达人素材视频表格源文件、你也可以按照DEMO文件中的格式填充数据，直接启动getURLDownload-Batch-dev.py下载它平台上的其他视频
 - 需要安装requirements对应的依赖库
+- auto-1用来处理某音电商罗盘导出的素材视频表格源文件
+- auto2&auto3用来接受处理后的Excel文件并下载视频至指定的目录
+- 你也可以按照DEMO文件中的格式填充数据，直接启动getURLDownload-Batch-dev.py下载它平台上的其他视频
+
 ## auto-1  (auto excel)
 * 弹出资源管理器让用户自己选择文件 
 * 对Excel文件进行处理
