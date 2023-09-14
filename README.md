@@ -12,12 +12,12 @@ pip install -r requirements.txt
 - auto2&auto3用来接受处理后的Excel文件并下载视频至指定的目录
 - 你也可以按照DEMO文件中的格式填充数据，直接启动getURLDownload-Batch-dev.py下载它平台上的其他视频
 
-## auto-1  (auto excel)
+## auto-1  (auto excel)-->normal
 * 弹出资源管理器让用户自己选择文件 
 * 对Excel文件进行处理
 * 退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
 
-## auto-2 & auto3  (直链获取 & 请求下载)
+## auto-2 & auto3  (直链获取 & 请求下载)-->Fixing
 * 读取Excel
 * 遍历视频链接所在第1列-->以视频URL为参数
 * 获取第2列和第3列的值-->用以视频重命名
@@ -28,4 +28,8 @@ pip install -r requirements.txt
 * 下载直链文件
 * 用HeadersDecoding程序来给Batch下载程序的cookie保活
 
+## auto-3  (请求模块)-->Normal
+- 读取Excel
+- 遍历视频直链所在第4列
+- 请求直链下载文件-->rename && Save
 
