@@ -34,8 +34,6 @@ num_days = int(input("请输入需要保存的天数："))
 selected_dates = unique_dates[:num_days]
 df = df[df[df.columns[1]].isin(selected_dates)]
 
-
-
 # 让用户输入数字选择需要保存的文件名
 print("请输入需要保存的文件名：")
 print("1: 糖醋排哭")
