@@ -1,5 +1,13 @@
 # 项目简介
-- 需要安装requirements对应的依赖库
+#### 需要安装对应依赖，你可以安装清华源或自行安装
+- 「 国内源安装-清华大学 您可以运行以下命令：」
+```
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+```
+- 「 源站安装 您可以运行以下命令：」
+```
+pip install -r requirements.txt
+```
 - auto-1用来处理某音电商罗盘导出的素材视频表格源文件
 - auto2&auto3用来接受处理后的Excel文件并下载视频至指定的目录
 - 你也可以按照DEMO文件中的格式填充数据，直接启动getURLDownload-Batch-dev.py下载它平台上的其他视频
