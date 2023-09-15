@@ -8,14 +8,14 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
 pip install -r requirements.txt
 ```
-- auto-1用来处理某音电商罗盘导出的素材视频表格源文件
-- auto2&auto3用来接受处理后的Excel文件并下载视频至指定的目录
-- 你也可以按照DEMO文件中的格式填充数据，直接启动getURLDownload-Batch-dev.py下载它平台上的其他视频
-
+- auto-1 用来处理某音电商罗盘导出的素材视频表格源文件
+- auto2&auto3 用来接受处理后的Excel文件并下载视频至指定的目录
+- auto-3 仅下载模块、使用auto-3需要在DEMO第四列填充视频直链
 ## auto-1  (auto excel)-->normal
-* 弹出资源管理器让用户自己选择文件 
+* 弹出资源管理器选择目标Excel文件 
 * 对Excel文件进行处理
-* 退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
+* DownloadInfo为退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
+* VideoInfo为选择保留天数和保存文件名，保存退出文件
 
 ## auto-2 & auto3  (直链获取 & 请求下载)-->Fixing
 * 读取Excel
