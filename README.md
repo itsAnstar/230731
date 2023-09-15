@@ -4,7 +4,7 @@
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
-- 「 源站安装 您可以运行以下命令：」
+- 「 默认源站安装 您可以运行以下命令：」
 ```
 pip install -r requirements.txt
 ```
