@@ -17,7 +17,7 @@ pip install -r requirements.txt
 * DownloadInfo为退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
 * VideoInfo为选择保留天数和保存文件名，保存退出文件
 
-## auto-2 & auto3  (直链获取 & 请求下载)-->fixing
+## auto-2 & auto-3  (直链获取 & 请求下载)-->fixing
 * 读取Excel
 * 遍历视频链接所在第1列-->以视频URL为参数
 * 获取第2列和第3列的值-->用以视频重命名
