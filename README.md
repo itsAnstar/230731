@@ -30,6 +30,7 @@ pip install -r requirements.txt
 
 ## auto-3  (请求模块)-->normal
 - 读取Excel
-- 遍历视频直链所在第4列
-- 请求直链下载文件-->rename && Save
+- 获取第2列（日期）和第3列（作者名）的值-->用以视频重命名
+- 遍历视频直链所在第4列-->此列为目标直链
+- 请求直链文件-->rename & Save
 
