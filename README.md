@@ -1,10 +1,10 @@
-# 项目简介
+# 仓库简介
 #### 需要安装对应依赖，可选清华软件源或默认源站安装
-- 「 国内源安装-清华大学 您可以运行以下命令：」
+- 「 国内源安装-清华大学 您可以运行以下命令」
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
-- 「 默认源站安装 您可以运行以下命令：」
+- 「 默认源站安装 您可以运行以下命令」
 ```
 pip install -r requirements.txt
 ```
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 * DownloadInfo为退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
 * VideoInfo为选择保留天数和保存文件名，保存退出文件
 
-## auto-2 & auto3  (直链获取 & 请求下载)-->fixing
+## auto-2 & auto-3  (直链获取 & 请求下载)-->fixing
 * 读取Excel
 * 遍历视频链接所在第1列-->以视频URL为参数
 * 获取第2列和第3列的值-->用以视频重命名
@@ -30,6 +30,7 @@ pip install -r requirements.txt
 
 ## auto-3  (请求模块)-->normal
 - 读取Excel
-- 遍历视频直链所在第4列
-- 请求直链下载文件-->rename && Save
+- 获取第2列（日期）和第3列（作者名）的值-->用以视频重命名
+- 遍历视频直链所在第4列-->此列为目标直链
+- 请求直链文件-->rename & Save
 
