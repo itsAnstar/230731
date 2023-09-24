@@ -8,7 +8,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
 pip install -r requirements.txt
 ```
-- auto-1 用来处理某音电商罗盘导出的素材视频表格源文件
+- auto-1 用来处理电商罗盘导出的素材视频表格源文件
 - auto2&auto3 用来接受处理后的Excel文件并下载视频至指定的目录
 - auto-3 仅下载模块、使用auto-3需要在DEMO第四列填充视频直链
 ## auto-1  (auto excel)-->normal
