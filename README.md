@@ -1,4 +1,10 @@
 # 仓库简介
+<p align="center">
+    <img src ="https://img.shields.io/badge/platform-windows|linux|macos-yellow.svg"/>
+    <img src ="https://img.shields.io/badge/python-3.1x-blue.svg" />
+    <img src ="https://img.shields.io/github/actions/workflow/status/vnpy/vnpy/pythonapp.yml?branch=master"/>
+    <img src ="https://img.shields.io/github/license/vnpy/vnpy.svg?color=orange"/>
+</p>
 #### 需要安装对应依赖，可选清华软件源或默认源站安装
 - 「 国内源安装-清华大学 您可以运行以下命令」
 ```
