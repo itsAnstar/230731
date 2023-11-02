@@ -5,7 +5,8 @@
     <img src ="https://img.shields.io/github/actions/workflow/status/vnpy/vnpy/pythonapp.yml?branch=master"/>
     <img src ="https://img.shields.io/github/license/vnpy/vnpy.svg?color=orange"/>
 </p>
-#### 需要安装对应依赖，可选清华软件源或默认源站安装
+
+### 需要安装对应依赖，可选清华软件源或默认源站安装
 - 「 国内源安装-清华大学 您可以运行以下命令」
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
