@@ -3,7 +3,7 @@ import requests
 import re
 from pprint import pprint
 
-url = 'https://www.douyin.com/video/7274920292923788559'
+url = 'input your video url'
 
 # 在站点获取headers信息
 headers = {
