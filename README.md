@@ -5,38 +5,69 @@
     <img src ="https://img.shields.io/github/license/vnpy/vnpy.svg?color=orange"/>
 </p>
 
-### 需要安装对应依赖，可选清华软件源或默认源站安装
-- 「 国内源安装-清华大学 您可以运行以下命令」
+<h3 align="center">部署Python环境直接运行源代码</h3>
+
+<h3 align="center">步骤分解如下</h3>
+<p align="center">
+    <img src="img/1.png" alt="Image 1" />
+</p>
+
+
+###  1、环境部署
+<p align="center"><a href="https://registry.npmmirror.com/-/binary/python/3.13.0/python-3.13.0a1-amd64.exe" target="_blank">点我下载Python-Windows64位安装包</a></p>
+
+
+<p align="center">
+    <img src="img/2.png" alt="Image 2" />
+</p>
+
+
+下载之后运行上图示的安装程序，按下图示勾选点击，进度条跑完显示successfully即为成功
+
+<p align="center">
+    <img src="img/3.png" alt="Image 3" />
+</p>
+
+### 2、获取仓库代码
+<p align="center">把下面的压缩文件解压</p>
+<p align="center"><a href="https://gitee.com/LuckyNigel/230731/releases/download/Public/auto.zip" target="_blank">点我下载auto压缩文件包</a></p>
+
+### 3、补足程序依赖
+1. 在WIN徽标LOGO右键打开PowerShell（管理员）/ 终端管理员
+2. CD命令切换到解压出来的目录，图示为切换到C盘当前用户的下载目录下的解压目录
+
+<p align="center">
+    <img src="img/4.png" alt="Image 4" />
+</p>
+
+
+```
+cd 此处中文应替换为你的解压后的文件夹路径
+ls #执行这一行查看当前目录的文件 此步骤可选
+```
+3. 执行以下命令、等待执行结束
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 ```
-- 「 默认源站安装 您可以运行以下命令」
-```
-pip install -r requirements.txt
-```
-- auto-1 用来处理电商罗盘导出的素材视频表格源文件
-- auto2&auto3 用来接受处理后的Excel文件并下载视频至指定的目录
-- auto-3 仅下载模块、使用auto-3需要在DEMO第四列填充视频直链
-## auto-1  (auto excel)-->normal
-* 弹出资源管理器选择目标Excel文件 
-* 对Excel文件进行处理
-* DownloadInfo为退出并保存文件更改，并重命名文件，格式为：“video加当天日期月日”例如“video0801”
-* VideoInfo为选择保留天数和保存文件名，保存退出文件
+下图最后输出的两行，提示包管理工具需要升级，只要前面正常下载了，可以不理会，如果这里有红色报错，可以复制终端最后一行的绿色部分升级代码，升级下pip再次执行上面的代码
+<p align="center">
+    <img src="img/5.png" alt="Image 5" />
+</p>
 
-## auto-2 & auto-3  (直链获取 & 请求下载)-->fixing
-* 读取Excel
-* 遍历视频链接所在第1列-->以视频URL为参数
-* 获取第2列和第3列的值-->用以视频重命名
-* 以requests.get方法获得response响应体
-* 以re.findall方法匹配需要的json数据并传参
-* 解析json-->正则匹配URL直链字段
-* 以requests.get请求直链
-* 下载直链文件
-* 用HeadersDecoding程序来给Batch下载程序的cookie保活
+### 4、程序前置文件
+这里往后的步骤需要使用电商罗盘中下载的Excel文件，请事前下载报表的时候就对品名进行分类
+请使用任意文本编辑器（或者使用你已经安装好的Python IDLE，这时候你可以在开始菜单找到）打开auto-Excel.py文件把下图所示的代码中的两个模块中的菜名替换改成你的品名，上下需要对应，有需要增删的项目可按照上下文语法格式书写，需要英文半角输入、编辑后需保存退出
+<p align="center">
+    <img src="img/6.png" alt="Image 6" />
+</p>
 
-## auto-3  (请求模块)-->normal
-- 读取Excel
-- 获取第2列（日期）和第3列（作者名）的值-->用以视频重命名
-- 遍历视频直链所在第4列-->此列为目标直链
-- 请求直链文件-->rename & Save
+
+### 5、运行
+1. 运行Excel预处理程序，在弹出的资源管理器中选择你从电商罗盘中下载的Excel文件，按照终端提示输入数字选择
+2. 因为我暂时放弃了直链解析模块的后续迭代，这里需要使用第三方工具（电脑运行微信小程序“提取下载工具”解析）把第三方解析的直链填入预处理输出的Excel文件的第四列（示例见 Excel Demo.xlxs文件）
+<p align="center">
+    <img src="img/7.png" alt="Image 7" />
+</p>
+
+3. 运行直链Download程序、选择填充好直链的Excel文件、选择一个视频保存目录
 
