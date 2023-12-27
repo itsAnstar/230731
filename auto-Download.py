@@ -29,18 +29,23 @@ else:
 
         # 遍历Excel表格，从第二行开始读取视频链接并下载
         for row in sheet.iter_rows(min_row=2, values_only=True):
-            video_url = row[3]
+            video_url = row[3]   # 第四列应为视频直链所在
             video_info = row[1] + "_" + row[2]  # 第二列和第三列的信息作为重命名的一部分
 
-            response = requests.get(video_url)
+            response = requests.get(video_url)   # 下载直链视频
 
             if response.status_code == 200:
                 video_path = os.path.join(save_dir, f"{video_info}.mp4")
                 with open(video_path, "wb") as f:
                     f.write(response.content)
-                print(f"视频下载成功！保存路径：{video_path}")
+                print("------------------------------------------------------------------------------")
+                print("{video_info}")
+                print(f"上述视频下载成功！保存路径：{video_path}")
+                print("------------------------------------------------------------------------------")
             else:
+                print("------------------------------------------------------------------------------")
                 print("视频下载失败！")
+                print("------------------------------------------------------------------------------")
 
         # 关闭Excel文件
         workbook.close()

@@ -15,7 +15,7 @@ file_path = filedialog.askopenfilename(filetypes=[("Excel files", "*.xlsx *.xls"
 df = pd.read_excel(file_path)
 
 # 删除第1、2、6列
-df = df.drop(df.columns[[0, 1, 5]], axis=1)
+df = df.drop(df.columns[[0,1,5,6,7,8,9,10,11]], axis=1)
 
 # 第2列按照选定分区降序排序
 df = df.sort_values(df.columns[1], ascending=False)
@@ -34,11 +34,13 @@ num_days = int(input("请输入需要保存的天数："))
 selected_dates = unique_dates[:num_days]
 df = df[df[df.columns[1]].isin(selected_dates)]
 
+
+
 # 让用户输入数字选择需要保存的文件名
 print("请输入需要保存的文件名：")
-print("1: 糖醋排哭")
+print("1: 糖醋排骨")
 print("2: 西湖醋鱼")
-print("3: 粉蒸肉")
+print("3: 葱油焖面")
 file_name_choice = int(input())
 
 # 根据用户的选择设置文件名
@@ -47,7 +49,7 @@ if file_name_choice == 1:
 elif file_name_choice == 2:
     file_name = "西湖醋鱼"
 elif file_name_choice == 3:
-    file_name = "粉蒸肉"
+    file_name = "葱油焖面"
 else:
     print("输入错误，将使用默认文件名")
     file_name = "default"
